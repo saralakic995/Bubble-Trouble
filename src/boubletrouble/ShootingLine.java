@@ -1,5 +1,8 @@
 package boubletrouble;
 
+import java.awt.geom.Line2D;
+import java.awt.geom.Rectangle2D;
+
 public class ShootingLine {
     private int lineStartX;
     private int lineStartY;
@@ -23,7 +26,16 @@ public class ShootingLine {
         this.lineStartX = lineStartX;
         this.lineStartY = lineStartY;
         this.lineSpeed = lineSpeed;
-        lineEndPosition = lineStartY;
+        this.lineEndPosition = lineStartY;
     }
     
+    public void move()
+    {
+        lineEndPosition -= lineSpeed;
+    }
+    
+    public Rectangle2D getLine()
+    {
+        return new Rectangle2D.Float(lineStartX, lineEndPosition, 2 , lineStartY);
+    }
 }

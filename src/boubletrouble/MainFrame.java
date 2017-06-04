@@ -23,6 +23,9 @@ public class MainFrame extends javax.swing.JFrame{
         setLocation(0, 0);
         MainPanel panel = new MainPanel();
         add(panel);
+        
+        panel.requestFocus();
+        panel.newGame();
         pack();
     }
     
