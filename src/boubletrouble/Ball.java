@@ -1,11 +1,18 @@
 package boubletrouble;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
+
 public class Ball {
     private int ballDiameter;
     private int xMovement;
     private int yMovement;
     private int ballX;
     private int ballY;
+    
+    static BufferedImage ballImage;
 
     public int getBallDiameter() {
         return ballDiameter;
@@ -59,5 +66,14 @@ public class Ball {
     public java.awt.geom.Ellipse2D getBallOval()
     {
         return new java.awt.geom.Ellipse2D.Float(ballX, ballY, ballDiameter, ballDiameter);
+    }
+    
+    public static boolean loadImages() {
+        try {
+            ballImage = ImageIO.read(new File("src/images/ball.png"));
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 }

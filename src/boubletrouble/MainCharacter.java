@@ -1,6 +1,10 @@
 package boubletrouble;
 
 import java.awt.Rectangle;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 public class MainCharacter {
     private int characterHeight = 30;
@@ -8,6 +12,8 @@ public class MainCharacter {
     private int xCharacter;
     private int yCharacter;
 
+    static BufferedImage characterImage = null;
+    
     public int getCharacterHeight() {
         return characterHeight;
     }
@@ -47,5 +53,19 @@ public class MainCharacter {
     public Rectangle getCharacterRectangle()
     {
         return new Rectangle(xCharacter, yCharacter, characterWidth, characterHeight);
+    }
+
+    public static BufferedImage getCharacterImage() {
+        return characterImage;
+    }
+    
+    
+    public static boolean loadImages() {
+        try {
+            characterImage = ImageIO.read(new File("src/images/slik.jpg"));
+            return true;
+        } catch (IOException e) {
+            return false;
+        }
     }
 }
