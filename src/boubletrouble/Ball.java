@@ -70,7 +70,7 @@ public class Ball {
     
     public static boolean loadImages() {
         try {
-            ballImage = ImageIO.read(new File("src/images/ball.png"));
+            ballImage = ImageIO.read(new File("src/images/ballImage.png"));
             return true;
         } catch (IOException e) {
             return false;

@@ -20,12 +20,12 @@ public class MainPanel extends javax.swing.JPanel implements ActionListener, Key
 
     private static int panelWidht = MainFrame.getFrameWidth() - 10;
     private static int panelHeight = MainFrame.getFrameHeight() - 50;
-    public Timer timer = new Timer(100, this);
+    public Timer timer = new Timer(60, this);
     private MainCharacter character;
     private ArrayList<ShootingLine> listOfShootingLines;
     private ArrayList<Ball> listOfBalls;
     private BufferedImage background = null;
-    private boolean backgroundImageLoaded = false;
+    private boolean backgroundImageLoaded = true;
     private boolean characterImageLoaded = false;
     private boolean ballImageLoaded = false;
     public boolean inGame;
@@ -141,7 +141,7 @@ public class MainPanel extends javax.swing.JPanel implements ActionListener, Key
         characterImageLoaded = MainCharacter.loadImages();
         ballImageLoaded = Ball.loadImages();
         try {
-            background = ImageIO.read(new File("src/images/slik.jpg"));
+            background = ImageIO.read(new File("src/images/backgroundImage.png"));
             backgroundImageLoaded = true;
         } catch (IOException e) {
             backgroundImageLoaded = false;

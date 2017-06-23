@@ -62,7 +62,7 @@ public class MainCharacter {
     
     public static boolean loadImages() {
         try {
-            characterImage = ImageIO.read(new File("src/images/slik.jpg"));
+            characterImage = ImageIO.read(new File("src/images/characterImage.png"));
             return true;
         } catch (IOException e) {
             return false;
