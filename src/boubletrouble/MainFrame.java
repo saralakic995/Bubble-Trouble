@@ -25,9 +25,9 @@ public class MainFrame extends javax.swing.JFrame{
     
     public MainFrame() throws HeadlessException {
         setPreferredSize(new Dimension(frameWidth, frameHeight));
-        setResizable(false);                        //da se ne moze mjenjati velicina  
-        setVisible(true);                           //da je vidljivo 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);    // da se na X gasi
+        setResizable(false);                        
+        setVisible(true);                          
+        setDefaultCloseOperation(EXIT_ON_CLOSE);    
         setLocation(0, 0);
         setJMenuBar(initJMenuBar());
         panel = new MainPanel();

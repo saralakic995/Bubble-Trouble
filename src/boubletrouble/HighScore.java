@@ -98,7 +98,7 @@ public class HighScore extends JFrame{
     public static void readTextFileLineByLine() {
         FileReader in = null;
         File file = new File(".\\files\\rezultati.txt");
-        //BufferedReader dozvoljava čitanje većeg "komada" datoteke odjednom.
+        
         BufferedReader bin = null;
         if(!file.exists()){
             if(!(new File(file.getParent()).exists()))
@@ -111,7 +111,7 @@ public class HighScore extends JFrame{
                     System.out.println(e.getMessage().toString());
                 }
         }
-        // File file = new File(".\\files\\rezultati.txt");
+        
         scoreTracker.clear();
         try {
             in = new FileReader(file);
